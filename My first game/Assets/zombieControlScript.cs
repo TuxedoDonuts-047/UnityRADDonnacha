@@ -7,16 +7,17 @@ using UnityEngine.UIElements;
 public class zombieControlScript : MonoBehaviour
 {
     CubeMove player;
-    Animator zombieAnimator;
+    Animator ZombieAnimator;
     enum ZombieState { Idle, Attack, Follow}
         ZombieState currentlyIs = ZombieState.Idle;
     private float aggroRadius = 10;
     private float walkingSpeed = 0.3f;
+    private float meleeDistance = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        zombieAnimator = GetComponent<Animator>();
+        ZombieAnimator = GetComponent<Animator>();
         player = FindAnyObjectByType <CubeMove>();
     }
 
@@ -30,7 +31,7 @@ public class zombieControlScript : MonoBehaviour
                 if (Vector3.Distance(player.transform.position, transform.position) < aggroRadius)
                 {
                     currentlyIs = ZombieState.Follow;
-                    zombieAnimator.SetBool("isWalking", true);
+                    ZombieAnimator.SetBool("IsWalking", true);
                 }
 
                 break;
@@ -45,7 +46,14 @@ public class zombieControlScript : MonoBehaviour
                 transform.LookAt(player.transform.position);
                 transform.position += transform.forward * walkingSpeed * Time.deltaTime;
 
+                if (Vector3.Distance(player.transform.position, transform.position) < meleeDistance)
+                {
+                    currentlyIs = ZombieState.Attack;
+                }
+
                 break;
+
+
         }
     }
 }

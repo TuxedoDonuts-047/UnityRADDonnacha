@@ -1,0 +1,10 @@
+Log(06/11/2023) by Donnacha O Donoghue - T00248511
+
+Hello, today is Monday the 6th of November, 2023.
+Today is my first day back to MTU after my mid term break.
+I have RAD Games development on Wednesday. 
+
+I just cloned my repository at quarter past ten in the evening via GIT GUI outside of college hours and on a laptop at home. 
+Hope it counts towards my grade.
+
+Once I am finished this log, i will thensend it back to my Github account via GIT BASH.I will then merge it with the one on Github and hopefully, this log will be added to it. =)

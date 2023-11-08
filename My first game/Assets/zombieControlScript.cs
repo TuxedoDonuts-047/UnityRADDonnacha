@@ -50,7 +50,6 @@ public class zombieControlScript : MonoBehaviour
                 {
                     currentlyIs = ZombieState.Attack;
                 }
-
                 break;
 
 

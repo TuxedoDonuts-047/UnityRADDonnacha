@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CubeMove : MonoBehaviour
 {
+    float runSpeed=15;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,10 @@ public class CubeMove : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
-            transform.position += transform.forward * Time.deltaTime;
+            transform.position += runSpeed * transform.forward * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.S))
-            transform.position -= transform.forward * Time.deltaTime;
+            transform.position -= runSpeed * transform.forward * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.D))
             transform.Rotate(Vector3.up, 180 * Time.deltaTime);

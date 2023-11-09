@@ -8,7 +8,7 @@ public class zombieControlScript : MonoBehaviour
 {
     CubeMove player;
     Animator ZombieAnimator;
-    enum ZombieState { Idle, Attack, Follow}
+    enum ZombieState { Idle, Attack, Follow, Dying}
         ZombieState currentlyIs = ZombieState.Idle;
     private float aggroRadius = 10;
     private float walkingSpeed = 0.3f;
@@ -52,8 +52,21 @@ public class zombieControlScript : MonoBehaviour
                 }
                 break;
 
+            case ZombieState.Dying:
+
+
+
+                break;
+
 
         }
+    }
+
+    internal void dieNow()
+    {
+        ZombieAnimator.SetBool("IsDying", true);
+       Destroy(gameObject,5);
+        currentlyIs = ZombieState.Dying;
     }
 }
 

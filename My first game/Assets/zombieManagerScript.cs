@@ -5,7 +5,7 @@ using UnityEngine;
 public class zombieManagerScript : MonoBehaviour
 {
 
-    int numberOfZombies = 200;
+    int numberOfZombies = 150;
     public Transform zombieCloneTemplate;
 
     // Start is called before the first frame update
@@ -14,9 +14,9 @@ public class zombieManagerScript : MonoBehaviour
         for(int i = 0; i < numberOfZombies; i++)
         {
             Vector3 position = new Vector3(
-                Random.Range(-50f, 50f),
-                0f,
-                Random.Range(-50f, 50f));
+                Random.Range(-30f, 30f),
+                3.6f,
+                Random.Range(-30f, 30f));
 
             Instantiate(zombieCloneTemplate,position, Quaternion.identity);
         }

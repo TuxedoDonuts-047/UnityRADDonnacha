@@ -6,6 +6,7 @@ public class CubeMove : MonoBehaviour
 {
     public Transform footballCloneTemplate;
     float runSpeed=15;
+    float jump =400;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class CubeMove : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             transform.Rotate(Vector3.up, -180 * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
            Transform newBall = Instantiate(footballCloneTemplate,
                 transform.position + 2*transform.forward, 
@@ -37,5 +38,10 @@ public class CubeMove : MonoBehaviour
 
             myNewBallScript.KickBall(transform);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            transform.position += jump * transform.up * 1 * Time.deltaTime;
+
+     
     }
 }
